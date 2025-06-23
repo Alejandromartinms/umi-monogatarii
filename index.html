@@ -347,21 +347,11 @@ imagePaths.forEach((path, index) => {
     imageMeshes.forEach(mesh => mesh.visible = true);
   }
 
-  const spreadMap = {
-    cueva: 80,
-    nido: 80,
-    nube: 80,
-    arbol: 80,
-    random: 130  // Más disperso
-  };
-
-  const range = spreadMap[concept] || 80;
-
   visibleMeshes.forEach((mesh, i) => {
     const target = {
-      x: (Math.random() - 0.5) * range,
-      y: (Math.random() - 0.5) * range,
-      z: (Math.random() - 0.5) * range
+      x: (Math.random() - 0.5) * 80,
+      y: (Math.random() - 0.5) * 80,
+      z: (Math.random() - 0.5) * 80
     };
 
     const current = {
@@ -378,7 +368,6 @@ imagePaths.forEach((path, index) => {
       })
       .start();
   });
-}
 
   // Ajusta la cámara tras recolocar las imágenes
   animateCameraToFitView(visibleMeshes);
